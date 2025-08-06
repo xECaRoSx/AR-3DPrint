@@ -23,5 +23,38 @@ public class TaskData : ScriptableObject
         public string warning;
 
         public float duration = 10f;
+
+#if UNITY_EDITOR
+        public void AutoSetDuration(float buffer = 3f)
+        {
+            if (voiceovers != null && voiceovers.Count > 0)
+            {
+                float maxLength = 0f;
+                foreach (var clip in voiceovers)
+                {
+                    if (clip != null && clip.length > maxLength)
+                        maxLength = clip.length;
+                }
+                duration = maxLength + buffer;
+            }
+        }
+#endif
     }
+
+#if UNITY_EDITOR
+    public void AutoSetDurations(float buffer = 2.5f)
+    {
+        if (steps == null) return;
+
+        foreach (var step in steps)
+        {
+            step.AutoSetDuration(buffer);
+        }
+    }
+
+    private void OnValidate()
+    {
+        AutoSetDurations(3f);
+    }
+#endif
 }

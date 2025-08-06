@@ -25,8 +25,6 @@ MonoBehaviour:
     - {fileID: 8300000, guid: 675c24937b13de74383864fd0867ad65, type: 3}
     guideObject:
     - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
     image: {fileID: 21300000, guid: 6d937e462defa7540ac8e1546bb36fac, type: 3}
     video: {fileID: 0}
     warning: 
@@ -39,8 +37,6 @@ MonoBehaviour:
     voiceovers:
     - {fileID: 8300000, guid: 6d022f61d63fb0c44a26508794826be0, type: 3}
     guideObject:
-    - {fileID: 0}
-    - {fileID: 0}
     - {fileID: 0}
     image: {fileID: 21300000, guid: 6d937e462defa7540ac8e1546bb36fac, type: 3}
     video: {fileID: 0}

@@ -15,6 +15,7 @@ public class GuideObjectController : MonoBehaviour
 
     public void ShowGuideObjects(List<GameObject> guideObjects)
     {
+        ClearGuideObjects();
         foreach (var obj in currentlyActive)
         {
             if (obj != null)
@@ -30,5 +31,15 @@ public class GuideObjectController : MonoBehaviour
                 currentlyActive.Add(obj);
             }
         }
+    }
+
+    public void ClearGuideObjects()
+    {
+        foreach (var obj in currentlyActive)
+        {
+            if (obj != null)
+                obj.SetActive(false);
+        }
+        currentlyActive.Clear();
     }
 }

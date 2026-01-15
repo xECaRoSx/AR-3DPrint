@@ -32,6 +32,15 @@ public class GameManager : MonoBehaviour
         SwitchState(AppState.Training);
         TaskManager.Instance.LoadStep();
     }
+    public void QuitGame()
+    {
+        Debug.Log("[GameManager] QuitGame called");
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+#elif UNITY_ANDROID || UNITY_STANDALONE
+    Application.Quit();
+#endif
+    }
 
     public void GoToTitle() => SwitchState(AppState.Title);
     public void GoToScanning() => SwitchState(AppState.Scanning);

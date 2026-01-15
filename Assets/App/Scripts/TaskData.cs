@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Video;
 
-[CreateAssetMenu(fileName = "NewTaskData", menuName = "ARLaser/Task Data")]
+[CreateAssetMenu(fileName = "NewTaskData", menuName = "AR3DPrint/Task Data")]
 public class TaskData : ScriptableObject
 {
     public string taskName;
